@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCdoB, Posicione-se</title>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #ff0000; --btn: #d00000; --btn-dark: #a80000;
+    --text: #000; --border: #1a1a1a; --ok: #15803d; --err: #d00000;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); background: #fff;
+    font-family: "Montserrat", system-ui, sans-serif; line-height: 1.4;
+  }
+  .hero {
+    background: var(--red); color: #fff; text-align: center;
+    padding: 96px 16px 860px;
+  }
+  .hero h1 {
+    margin: 0 0 28px; font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1.05; letter-spacing: .5px;
+  }
+  .hero .lead { margin: 0 auto; max-width: 920px; font-weight: 500; font-size: clamp(1.15rem, 2.4vw, 2.3rem); line-height: 1.3; }
+  .hero .sub { margin: 6px 0 0; font-weight: 500; font-size: clamp(1rem, 1.8vw, 1.9rem); }
+  main { max-width: 1050px; margin: -810px auto 80px; padding: 0 16px; }
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 14px;
+    padding: 36px 38px 26px;
+  }
+  .to { font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 500; margin-bottom: 18px; }
+  .to strong { font-weight: 700; }
+  label { display: block; font-weight: 600; font-size: 1.25rem; margin: 0 0 6px; }
+  input[type=text], input[type=email], textarea {
+    width: 100%; padding: 14px 16px; font: inherit; font-size: 1rem; color: inherit;
+    border: 1px solid var(--border); border-radius: 12px; background: #fff;
+  }
+  input[type=text], input[type=email] { height: 80px; font-size: 1.1rem; }
+  textarea { min-height: 500px; resize: vertical; line-height: 1.6; }
+  input:focus, textarea:focus { outline: 2px solid var(--red); border-color: transparent; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 20px; }
+  .consent {
+    display: flex; gap: 10px; align-items: flex-start; margin: 24px 0 0;
+    font-weight: 500; font-size: 1.1rem; line-height: 1.3;
+  }
+  .consent input { width: 34px; height: 36px; flex: none; margin: 0; accent-color: var(--btn); }
+  .hp { position: absolute; left: -9999px; }
+  .captcha { margin-top: 20px; min-height: 65px; }
+  button {
+    margin-top: 22px; width: 100%; height: 80px; font: inherit; font-weight: 700;
+    font-size: 1.4rem; letter-spacing: .5px; color: #fff; background: var(--btn);
+    border: 0; border-radius: 12px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-dark); }
+  button:disabled { opacity: .6; cursor: wait; }
+  #status { margin-top: 16px; font-weight: 700; text-align: center; }
+  #status.ok { color: var(--ok); }
+  #status.err { color: var(--err); }
+  .share { display: none; margin-top: 10px; text-align: center; font-weight: 600; }
+  .share a { color: var(--btn); }
+  @media (max-width: 640px) {
+    .hero { padding: 56px 16px 160px; }
+    main { margin-top: -130px; }
+    .card { padding: 22px 16px 18px; }
+    .row { grid-template-columns: 1fr; gap: 14px; }
+    textarea { min-height: 380px; }
+    input[type=text], input[type=email], button { height: 60px; }
+    .consent { font-size: .95rem; }
+    .consent input { width: 26px; height: 26px; }
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>PCdoB, POSICIONE-SE!</h1>
+  <p class="lead">Cobre do PCdoB um posicionamento sobre o Deputado Federal eleito, Elias Jabbour.</p>
+  <p class="sub">Edite o texto se quiser e envie!</p>
+</header>
+<main>
+  <form id="form" class="card" novalidate>
+    <div class="to">Para: <strong>Direção do PCdoB</strong></div>
+
+    <label for="message">Mensagem</label>
+    <textarea id="message" name="message" maxlength="5000">Prezados companheiros do PCdoB,
+
+Venho por meio deste email pedir o posicionamento do partido frente à atitude do deputado federal eleito Elias Jabbour. O futuro parlamentar propôs alianças e sínteses com o grupo de extrema direita Missão (MBL) e defendeu o ex-ditador Ernesto Geisel, cujo governo matou Vladimir Herzog e diversos membros do Comitê Central do PCdoB no Massacre da Lapa. Também faz a defesa acrítica do governo militar de Ibrahim Traoré, que instaurou milícias armadas pelo governo que cometem limpeza étnica contra a minoria Fulani e perseguem pessoas LGBT, sob a justificativa do desenvolvimento econômico.
+
+É fato que uma série de governos, dos nazistas à União Soviética, fizeram políticas de desenvolvimento econômico coordenadas pelo Estado. A defesa do desenvolvimento econômico a qualquer custo não torna ninguém automaticamente comunista, nem sequer de esquerda. Impressiona que um futuro parlamentar do seu partido atue de forma oposta às diretrizes que o PCdoB professa: a defesa dos direitos humanos, o fortalecimento do Estado democrático de direito, a defesa da democracia e a participação popular.
+
+Na atuação do futuro deputado parece haver uma hierarquia de valores em que a defesa do Estado democrático de direito e das minorias é subalterna aos planos econômicos heterodoxos. Isso posiciona o partido à direita do próprio Mao Zedong, que defendia de forma progressista uma visão humanista e anticulturalista a favor da emancipação das mulheres, a pauta progressista mais relevante daquele momento.
+
+Aproveitando o ensejo, é importante pontuar a posição caricata de sinofilia extrema do deputado, que muitas vezes inventa uma China em que "Confúcio e Laotsé são as duas mentes por detrás da construção do ser humano chinês em sua plenitude. Essa ontologia é caracterizada pelo coletivo em detrimento do individual, da espiritualidade sem deus, do poder popular legitimado pela incapacidade das dinastias em entregarem grandes obras públicas contra enchentes e se manifesta recentemente na governança do Partido Comunista."
+
+Com isso, apaga os milhares de deuses das religiões locais do território chinês, a enorme hierarquia celestial dos taoístas e o culto religioso a Confúcio. Faz do chinês não um indivíduo humano, situado num território e num tempo, mas um Homo subditus: transforma 1 bilhão de pessoas em súditos confucionistas do Partido Comunista Chinês, apagando toda a diferença de 1/8 da população humana do planeta.
+
+Atenciosamente,</textarea>
+
+    <div class="row">
+      <div>
+        <label for="name">Seu nome</label>
+        <input type="text" id="name" name="name" required maxlength="100" autocomplete="name">
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required maxlength="254" autocomplete="email">
+      </div>
+    </div>
+
+    <!-- Armadilha contra bots: humanos não veem este campo -->
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <label class="consent">
+      <input type="checkbox" id="consent" required>
+      Autorizo o envio desta mensagem em meu nome e o uso dos meus dados para esta campanha (LGPD).
+    </label>
+
+    <!-- Captcha Cloudflare Turnstile. Troque a chave de TESTE pela sua (veja o LEIA-ME). -->
+    <div class="captcha"><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-language="pt-br"></div></div>
+
+    <button type="submit" id="btn">ENVIAR</button>
+    <div id="status" role="status"></div>
+    <div class="share" id="share">
+      Agora compartilhe: <a id="wa" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </form>
+</main>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

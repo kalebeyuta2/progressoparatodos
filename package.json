@@ -1,0 +1,6 @@
+{
+  "name": "progresso-para-todos",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" }
+}
